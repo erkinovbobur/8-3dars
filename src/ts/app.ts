@@ -20,6 +20,12 @@ class ProductManager {
         this.renderProducts(this.products);
     }
 
+    deleteProduct(index: number): void {
+        this.products.splice(index, 1);
+        this.saveProducts();
+        this.renderProducts(this.products);
+    }
+
     searchProducts(query: string): Product[] {
         return this.products.filter(product => 
             product.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -40,12 +46,26 @@ class ProductManager {
         }
     }
 
-    private renderProducts(products: Product[]): void {
+    // renderProducts funksiyasini public qilib o'zgartiramiz
+    public renderProducts(products: Product[]): void {
         const productList = document.getElementById('productList') as HTMLUListElement;
+        
+        if (!productList) {
+            console.error('Element with ID "productList" not found.');
+            return;
+        }
+
         productList.innerHTML = '';
-        products.forEach(product => {
+        products.forEach((product, index) => {
             const li = document.createElement('li');
             li.textContent = `${product.name} - ${product.price} so'm - ${product.type} - ${product.unit} - ${product.arrivalDate} - ${product.supplier}`;
+            
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Oʻchirish';
+            deleteButton.className = 'delete-button';
+            deleteButton.onclick = () => this.deleteProduct(index);
+            
+            li.appendChild(deleteButton);
             productList.appendChild(li);
         });
     }
@@ -73,8 +93,7 @@ productForm.addEventListener('submit', (e) => {
 });
 
 searchInput.addEventListener('input', () => {
-    const query = searchInput.value;
+    const query = searchInput.value.trim();
     const filteredProducts = productManager.searchProducts(query);
     productManager.renderProducts(filteredProducts);
 });
- 

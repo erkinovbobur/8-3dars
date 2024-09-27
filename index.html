@@ -3,26 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mahsulotlarni Ro'yxatga Olish</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Mahsulotlarni Ro'yxatga Olish</h1>
-        <form id="productForm">
-            <input type="text" id="name" placeholder="Mahsulot nomi" required>
-            <input type="number" id="price" placeholder="Narxi" required>
-            <input type="text" id="type" placeholder="Turi" required>
-            <input type="text" id="unit" placeholder="O'lchov birligi" required>
-            <input type="date" id="arrivalDate" placeholder="Kelgan sanasi" required>
-            <input type="text" id="supplier" placeholder="Kim tomonidan kelgani" required>
-            <button type="submit">Qo'shish</button>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-8 max-w-xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Mahsulotlarni Ro'yxatga Olish</h1>
+
+        <form id="productForm" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="mb-4">
+                <input type="text" id="name" placeholder="Mahsulot nomi" required 
+                    class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <input type="number" id="price" placeholder="Narxi" required 
+                    class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="type" placeholder="Turi" required 
+                    class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="unit" placeholder="O'lchov birligi" required 
+                    class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <input type="date" id="arrivalDate" placeholder="Kelgan sanasi" required 
+                    class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="supplier" placeholder="Kim tomonidan kelgani" required 
+                    class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition duration-300">
+                Qo'shish
+            </button>
         </form>
 
-        <h2>Mahsulotlarni Qidirish</h2>
-        <input type="text" id="searchInput" placeholder="Mahsulot qidirish">
+        <h2 class="text-2xl font-semibold text-gray-700 mt-10 mb-4">Mahsulotlarni Qidirish</h2>
+        <input type="text" id="searchInput" placeholder="Mahsulot qidirish" 
+            class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6">
 
-        <ul id="productList"></ul>
+        <ul id="productList" class="bg-white p-6 rounded-lg shadow-md divide-y divide-gray-200"></ul>
     </div>
+
     <script src="./build/js/app.js"></script>
 </body>
 </html>
