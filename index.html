@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Mahsulotlarni Ro'yxatga Olish</h1>
+        <form id="productForm">
+            <input type="text" id="name" placeholder="Mahsulot nomi" required>
+            <input type="number" id="price" placeholder="Narxi" required>
+            <input type="text" id="type" placeholder="Turi" required>
+            <input type="text" id="unit" placeholder="O'lchov birligi" required>
+            <input type="date" id="arrivalDate" placeholder="Kelgan sanasi" required>
+            <input type="text" id="supplier" placeholder="Kim tomonidan kelgani" required>
+            <button type="submit">Qo'shish</button>
+        </form>
+
+        <h2>Mahsulotlarni Qidirish</h2>
+        <input type="text" id="searchInput" placeholder="Mahsulot qidirish">
+
+        <ul id="productList"></ul>
+    </div>
+    <script src="./build/js/app.js"></script>
+</body>
+</html>
