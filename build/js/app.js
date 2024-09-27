@@ -41,8 +41,8 @@ class ProductManager {
             const li = document.createElement('li');
             li.textContent = `${product.name} - ${product.price} so'm - ${product.type} - ${product.unit} - ${product.arrivalDate} - ${product.supplier}`;
             const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Oʻchirish';
-            deleteButton.className = 'delete-button';
+            deleteButton.textContent = 'Delete';
+            deleteButton.className = 'delete-button ';
             deleteButton.onclick = () => this.deleteProduct(index);
             li.appendChild(deleteButton);
             productList.appendChild(li);
